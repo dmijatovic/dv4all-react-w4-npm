@@ -1,0 +1,70 @@
+{
+  "name": "dv4all-react-comp-w4",
+  "version": "0.0.1",
+  "description": "testing react components npm module",
+  "author": "dmijatovic",
+  "license": "MIT",
+  "repository": "dmijatovic/dv4all-react-comp-test",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "build": "webpack --env=lib",
+    "start": "webpack-dev-server --env=example",
+    "dev": "webpack-dev-server --env.wpf=example --env.api=demo",
+    "dev:demo": "webpack-dev-server --env.wpf=lib --env.api=demo",
+    "prepare": "npm run build",
+    "predeploy": "cd example && npm install && npm run build",
+    "deploy": "gh-pages -d example/build",
+    "wp:dev": "node inspect ./node_modules/webpack/bin/webpack.js --env.wpf=example --env.api=demo"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.5.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.1.5",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.3",
+    "css-loader": "^1.0.0",
+    "cssnano": "^4.1.4",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.9.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss": "^7.0.5",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.1.1",
+    "prop-types": "^15.5.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.3.1",
+    "sass-loader": "^7.1.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.20.2",
+    "webpack-bundle-analyzer": "^3.0.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 1%",
+    "not IE 10"
+  ],
+  "files": [
+    "dist"
+  ]
+}
