@@ -19,7 +19,7 @@
     "demo": "webpack-dev-server --env.wpf=demo --env.api=demo",
     "build:lib": "webpack --env.wpf=lib --env.api=demo",
     "build:demo": "webpack --env.wpf=demo --env.api=demo",
-    "wp:dev": "node inspect ./node_modules/webpack/bin/webpack.js --env.wpf=example --env.api=demo",
+    "wp:dev": "node inspect ./node_modules/webpack/bin/webpack.js --env.wpf=demo --env.api=demo",
     "prepare": "npm run build:demo",
     "predeploy": "npm run build:lib"
   },
@@ -34,6 +34,7 @@
     "@babel/plugin-proposal-decorators": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
     "autoprefixer": "^9.1.5",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
@@ -61,11 +62,7 @@
     "webpack": "^4.20.2",
     "webpack-bundle-analyzer": "^3.0.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
-  },
-  "browserslist": [
-    "last 2 version",
-    "> 1%",
-    "not IE 10"
-  ]
+    "webpack-dev-server": "^3.1.9",
+    "whatwg-fetch": "^3.0.0"
+  }
 }
