@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 //load stats configuration
 const { stats } = require('./stats');
-//construct dist folder location
+//construct dist folder locatio
 //note: we go up from webpack folder into dist
 const dist = path.resolve(__dirname, '../dist');
 //console.log("dist...", dist);
@@ -81,7 +81,7 @@ module.exports = {
       // Options similar to webpackOptions.output
       // both options are optional
       filename: "[name].css",
-     	chunkFilename: "[id].css"
+      chunkFilename: "[id].css"
 			}),
 		//copy assets
 		//https://webpack.js.org/plugins/copy-webpack-plugin/

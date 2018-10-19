@@ -9,31 +9,30 @@
 /**
  * Get configuration file
  */
-getConfig = env =>{
-  debugger
+const getConfig = env =>{
+  let f;
+  //debugger
   //load proxy module
   let p = require('./webpack/proxy');
   //get proxy
   let proxy = p(env.api);
+  //get webpack config partial
+  f = require(`./webpack/${env.wpf}`);
   //if (!env) return null;
   switch(env.wpf.toLowerCase()){
     case "lib":
-      f = require('./webpack/lib');
       //no proxy for lib
-      //config = f(null);
       return f;
-    case "example":
-      //get proxy settings
-      //proxy = p(env.api);
-      //get basic settings
-      f = require('./webpack/example');
-      config = f(proxy);
-      return config;
+    case "demo":
+    case "test":
+    case "acc":
+      //return with proxy settings
+      return f(proxy);
     default:
-      console.log("Environment variable not defined env.wpf")
+      //eslint-disable-next-line
+      console.log("Environment value of env.wpf not matched")
       return null;
   }
-  //update proxy
 }
 
 module.exports = (env) =>{

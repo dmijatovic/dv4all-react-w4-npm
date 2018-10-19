@@ -10,18 +10,19 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { stats } = require('./stats');
 //construct dist folder location
 //note: we go up from webpack folder into dist
-const dist = path.resolve(__dirname, '../example/dist');
+const dist = path.resolve(__dirname, '../demo/dist');
 //console.log("dist...", dist);
 
 module.exports = proxy =>{
 	return{
 		mode: 'development',
 		entry:{
-			index: './example/index.js'
+			index: './demo/index.js'
 		},
 		output: {
 			filename: '[name].js',
-			chunkFilename: '[name].js'
+      chunkFilename: '[name].js',
+      path: dist
 		},
 		/*externals:{
 			'react':'commonjs react'
@@ -71,7 +72,7 @@ module.exports = proxy =>{
 			//https://webpack.js.org/plugins/html-webpack-plugin/
 			new HtmlWebpackPlugin({
 				filename: 'index.html',
-				template: './example/index.html',
+				template: './demo/index.html',
 				inject: true
 			}),
 			//new ExtractTextPlugin('[name].css')
@@ -86,7 +87,7 @@ module.exports = proxy =>{
 			new CopyWebpackPlugin([
 				//copy all files from static dir to root
 				//note: when no files folder is not copied!
-				'./example/assets/'
+				'./demo/assets/'
 			])
 		],
 		/**

@@ -13,14 +13,15 @@
     "npm": ">=5"
   },
   "scripts": {
-    "build": "webpack --env=lib",
-    "start": "webpack-dev-server --env=example",
-    "dev": "webpack-dev-server --env.wpf=example --env.api=demo",
-    "dev:demo": "webpack-dev-server --env.wpf=lib --env.api=demo",
-    "prepare": "npm run build",
-    "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build",
-    "wp:dev": "node inspect ./node_modules/webpack/bin/webpack.js --env.wpf=example --env.api=demo"
+    "start": "webpack-dev-server --env.wpf=demo --env.api=local",
+    "dev": "webpack-dev-server --env.wpf=demo --env.api=demo",
+    "acc": "webpack-dev-server --env.wpf=demo --env.api=acc",
+    "demo": "webpack-dev-server --env.wpf=demo --env.api=demo",
+    "build:lib": "webpack --env.wpf=lib --env.api=demo",
+    "build:demo": "webpack --env.wpf=demo --env.api=demo",
+    "wp:dev": "node inspect ./node_modules/webpack/bin/webpack.js --env.wpf=example --env.api=demo",
+    "prepare": "npm run build:demo",
+    "predeploy": "npm run build:lib"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
@@ -34,11 +35,14 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "autoprefixer": "^9.1.5",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.3",
     "css-loader": "^1.0.0",
     "cssnano": "^4.1.4",
+    "eslint": "^5.7.0",
+    "eslint-plugin-react": "^7.11.1",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.4",
@@ -63,8 +67,5 @@
     "last 2 version",
     "> 1%",
     "not IE 10"
-  ],
-  "files": [
-    "dist"
   ]
 }

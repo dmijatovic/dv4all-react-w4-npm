@@ -1,0 +1,51 @@
+/**
+  CSS Grid layout
+*/
+
+#root{
+  flex:1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20rem auto;
+  grid-template-rows: 5rem auto 4rem;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer"
+}
+
+.app-header{
+  grid-area: header;
+  background-color: var(--color-light-4);
+}
+
+.app-sidebar{
+  grid-area: sidebar;
+}
+
+.app-sidebar{
+  grid-area: sidebar;
+  background-color: var(--color-light-2);
+  color: var(--color-dark);
+}
+
+.app-footer{
+  grid-area: footer;
+  background-color: var(--color-dark-1);
+  color: var(--color-light-1);
+}
+
+
+/*--width-xs 50% => 1rem = 8px */
+@media screen and (max-width:480px){
+  #root{
+    grid-template-rows: 5rem 3rem auto 5rem;
+    grid-template-areas:
+      "header header"
+      "sidebar sidebar"
+      "main main"
+      "footer footer"
+  }
+}
+
+
