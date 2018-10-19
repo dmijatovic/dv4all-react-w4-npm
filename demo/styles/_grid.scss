@@ -6,8 +6,9 @@
   flex:1;
   width: 100%;
   display: grid;
-  grid-template-columns: 20rem auto;
-  grid-template-rows: 5rem auto 4rem;
+  //auto is not supported by IE11
+  grid-template-columns: 20vw 80vw;
+  grid-template-rows: 10vh 83vh 7vh;
   grid-template-areas:
     "header header"
     "sidebar main"
@@ -27,6 +28,10 @@
   grid-area: sidebar;
   background-color: var(--color-light-2);
   color: var(--color-dark);
+}
+
+.app-content{
+  grid-area: main;
 }
 
 .app-footer{

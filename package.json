@@ -12,6 +12,10 @@
     "node": ">=8",
     "npm": ">=5"
   },
+  "browserslist":[
+    "> 1%",
+    "IE > 9"
+  ],
   "scripts": {
     "start": "webpack-dev-server --env.wpf=demo --env.api=local",
     "dev": "webpack-dev-server --env.wpf=demo --env.api=demo",
