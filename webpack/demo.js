@@ -103,7 +103,9 @@ module.exports = proxy =>{
 			port: 3000,
 			stats: stats,
 			compress: true,
-			proxy: proxy
+			proxy: proxy,
+			//url rewrites
+			historyApiFallback:true,
 		}
 	}
 };

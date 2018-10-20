@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
 import { BrowserRouter } from 'react-router-dom';
-
 import AppRouter from './router/AppRouter';
+import routes from './router/routes';
+
 import {Header, Sidebar, Footer} from '../lib';
 
 export default class App extends Component {
@@ -11,7 +12,7 @@ export default class App extends Component {
       <BrowserRouter>
         <React.Fragment>
           <Header/>
-          <Sidebar/>
+          <Sidebar items={routes}/>
           <section className="app-content">
             <AppRouter/>
           </section>
