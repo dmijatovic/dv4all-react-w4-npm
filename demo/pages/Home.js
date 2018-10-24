@@ -17,7 +17,7 @@ const Home = () => {
         </p>
 
         <Typography variant="h4" className="py-1">
-          Example using NLX theme defined in the lib with material-ui components
+          Example using material ui NLX theme with material-ui components
         </Typography>
 
         <p>
