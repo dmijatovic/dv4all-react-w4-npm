@@ -85,7 +85,7 @@ To break out of debugging mode use Ctrl+C (Cmd+C) twice.
   npm publish
 ```
 
-NOTE! If you get error during publishing about package name spam detection - DO NOT USE NUMBERS IN THE PROJECT NAME.
+NOTE! If you get error during publishing about package name spam detection - DO NOT USE NUMBERS IN THE PROJECT NAME defined in package.json.
 
 ```bash
 npm ERR! publish Failed PUT 403
@@ -93,11 +93,11 @@ npm ERR! code E403
 npm ERR! Package name triggered spam detection; if you believe this is in error, please contact support@npmjs.com : dv4all-react-w4-npm
 ```
 
-### Upgrade package
+### Upgrade package using [npm version](https://docs.npmjs.com/getting-started/publishing-npm-packages)
 
 npm version command will increase version number in package.json.
 
-Note! in all cases this action will add git tag to your repo if is linked
+Note! in all cases this action will add git tag to your repo if is your npm package is linked to repo.
 
 ```bash
   # patch update
@@ -114,10 +114,25 @@ Note! in all cases this action will add git tag to your repo if is linked
 
 ```
 
-## Local linking
+## Local linking using [npm link](https://docs.npmjs.com/cli/link)
 
+Package linking is a two-step process.
 
+1. First, npm link in a package folder which will create a symlink in the global folder, as you installed this library using `npm i -g`.
 
+```bash
+  # issue this command in the project (library) you want to link to
+  npm link
+
+```
+
+2. In the project you want to use `linked` library type
+
+```bash
+  # link to package name => name as stated in package.json
+  npm link { package-name }
+
+```
 
 ## License
 
