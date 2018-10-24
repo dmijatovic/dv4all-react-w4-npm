@@ -1,5 +1,5 @@
 {
-  "name": "dv4all-react-w4-npm",
+  "name": "dv4all-react-components-demo",
   "version": "0.0.1",
   "description": "testing react components npm module",
   "author": "dmijatovic",
@@ -21,9 +21,7 @@
     "demo": "webpack-dev-server --env.wpf=demo --env.api=demo",
     "build:lib": "webpack --env.wpf=lib --env.api=demo",
     "build:demo": "webpack --env.wpf=demo --env.api=demo",
-    "wp:dev": "node inspect ./node_modules/webpack/bin/webpack.js --env.wpf=demo --env.api=demo",
-    "prepare": "npm run build:demo",
-    "predeploy": "npm run build:lib"
+    "wp:dev": "node inspect ./node_modules/webpack/bin/webpack.js --env.wpf=demo --env.api=demo"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
