@@ -1,6 +1,6 @@
 {
-  "name": "dv4all-react-w4-npm",
-  "version": "0.0.1",
+  "name": "dv4all-react-components-demo",
+  "version": "0.0.2",
   "description": "testing react components npm module",
   "author": "dmijatovic",
   "license": "MIT",
@@ -21,22 +21,24 @@
     "demo": "webpack-dev-server --env.wpf=demo --env.api=demo",
     "build:lib": "webpack --env.wpf=lib --env.api=demo",
     "build:demo": "webpack --env.wpf=demo --env.api=demo",
-    "wp:dev": "node inspect ./node_modules/webpack/bin/webpack.js --env.wpf=demo --env.api=demo",
-    "prepare": "npm run build:demo",
-    "predeploy": "npm run build:lib"
+    "wp:dev": "node inspect ./node_modules/webpack/bin/webpack.js --env.wpf=demo --env.api=demo"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "@material-ui/core": "^3.3.1",
+    "@material-ui/icons": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-decorators": "^7.1.2",
+    "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
-    "@babel/polyfill": "^7.0.0",
+    "@material-ui/core": "^3.3.1",
+    "@material-ui/icons": "^3.0.1",
     "autoprefixer": "^9.1.5",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
