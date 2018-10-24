@@ -1,4 +1,4 @@
-# dv4all-react-comp-test
+# dv4all-react-components-demo
 
 Testing react components sharing as npm module.
 
@@ -6,14 +6,14 @@ Testing react components sharing as npm module.
 
 ```bash
 
-  npm install --save dv4all-react-w4-npm
+  npm install --save dv4all-react-components-demo
 
 ```
 
 ## Use of library
 
-For more information about how to use components take a look at demo project.
-This project has its own read.me file. In addition each component has its own readme file.
+For more information about how to use components clone this project from github and look at demo project.
+Demo project has its own read.me file. In addition each component has its own readme file.
 
 ## Development
 
@@ -72,6 +72,65 @@ To break out of debugging mode use Ctrl+C (Cmd+C) twice.
   debugger
 
   # use ctl + C to stop
+
+```
+
+## Publishing library to npm
+
+```bash
+  # login to npm with you credentials
+  npm login
+
+  # publish
+  npm publish
+```
+
+NOTE! If you get error during publishing about package name spam detection - DO NOT USE NUMBERS IN THE PROJECT NAME defined in package.json.
+
+```bash
+npm ERR! publish Failed PUT 403
+npm ERR! code E403
+npm ERR! Package name triggered spam detection; if you believe this is in error, please contact support@npmjs.com : dv4all-react-w4-npm
+```
+
+### Upgrade package using [npm version](https://docs.npmjs.com/getting-started/publishing-npm-packages)
+
+npm version command will increase version number in package.json.
+
+Note! in all cases this action will add git tag to your repo if is your npm package is linked to repo.
+
+```bash
+  # patch update
+  # from 1.0.0 -> 1.0.1
+  npm version patch
+
+  # minor update
+  # from 1.0.0 -> 1.1.0
+  npm version minor
+
+  # major update
+  # from 1.0.0 -> 2.0.0
+  npm version major
+
+```
+
+## Local linking using [npm link](https://docs.npmjs.com/cli/link)
+
+Package linking is a two-step process.
+
+1. First, npm link in a package folder which will create a symlink in the global folder, as you installed this library using `npm i -g`.
+
+```bash
+  # issue this command in the project (library) you want to link to
+  npm link
+
+```
+
+2. In the project you want to use `linked` library type
+
+```bash
+  # link to package name => name as stated in package.json
+  npm link { package-name }
 
 ```
 
